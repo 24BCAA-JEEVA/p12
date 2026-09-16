@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css';
 
 function App() {
   const [cart, setCart] = useState([
@@ -6,20 +7,20 @@ function App() {
       id: 1,
       name: "Laptop",
       price: 50000,
-      quantity: 1
+      quantity: 1,
     },
     {
       id: 2,
       name: "Headphones",
       price: 2000,
-      quantity: 1
+      quantity: 1,
     },
     {
       id: 3,
       name: "Mouse",
       price: 800,
-      quantity: 1
-    }
+      quantity: 1,
+    },
   ]);
 
   const increaseQuantity = (id) => {
@@ -59,17 +60,11 @@ function App() {
 
           <p>Quantity: {item.quantity}</p>
 
-          <button
-            aria-label={`Decrease ${item.name}`}
-            onClick={() => decreaseQuantity(item.id)}
-          >
+          <button onClick={() => decreaseQuantity(item.id)}>
             -
           </button>
 
-          <button
-            aria-label={`Increase ${item.name}`}
-            onClick={() => increaseQuantity(item.id)}
-          >
+          <button onClick={() => increaseQuantity(item.id)}>
             +
           </button>
         </div>
